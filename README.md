@@ -3,4 +3,4 @@
 																
 <a href="https://codeclimate.com/github/areldin8/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/b960cc7c1689411cb3c8/maintainability" /></a>
 
-<image src="app/src/main/screenshots/even.jpg" alt="Even example win and fail"> 
+![Even win and fail](/screenshots/even.jpg)

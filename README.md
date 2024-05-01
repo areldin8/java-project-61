@@ -3,7 +3,7 @@
 																
 <a href="https://codeclimate.com/github/areldin8/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/b960cc7c1689411cb3c8/maintainability" /></a>
 
-Even win and fail -> 
+Even win and fail -> \n
 https://asciinema.org/a/3G5ObN4NqyuyVhDiHH8x2oruJ
 Calc win and fail -> 
 https://asciinema.org/a/6qWAJfHPrpdk9gKtooYVUyoH2

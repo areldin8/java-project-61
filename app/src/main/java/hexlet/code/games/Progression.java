@@ -1,43 +1,41 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
 
 public class Progression {
     public static final String DESCRIPTION = "What number is missing in the progression?";
-    public static final int MAX_LENGTH = 10;
     public static final int MAX_SIZE = 10;
     public static final int MIN_SIZE = 5;
-    public static final int ATTEMPT_COUNT = Engine.ATTEMPTS;
-    private static final int QUESTION_NUMBER = 0;
-    private static final int ANSWER_NUMBER = 1;
-    private static String[][] questionsAndAnswers = new String[ATTEMPT_COUNT][2];
 
-    public static void gameProgression() {
-        questionsAndAnswers = generateQuestionsAndAnswers();
-        Engine.introGame(DESCRIPTION, questionsAndAnswers);
+    public static void startProgression() {
+        var questionsAndAnswers = new String[Engine.ROUNDS_COUNT][];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questionsAndAnswers[i] = generateRound();
+        }
+        Engine.run(DESCRIPTION, questionsAndAnswers);
     }
 
-    private static String[][] generateQuestionsAndAnswers(){
-        Random random = new Random();
-        int numsInRow = random.nextInt(MIN_SIZE, MAX_SIZE);
-        for (int i = 0; i < ATTEMPT_COUNT; i++) {
-            int missingNumberIndex = random.nextInt(numsInRow);
-            int increment = random.nextInt(MAX_LENGTH);
-            int currentNum = random.nextInt(100);
-            String[] progression = generateProgression(numsInRow, currentNum, increment);
-            String missingNumber = progression[missingNumberIndex];
-            progression[missingNumberIndex] = " .. ";
-            questionsAndAnswers[i][ANSWER_NUMBER] = missingNumber;
-            questionsAndAnswers[i][QUESTION_NUMBER] = String.join(" ", progression);
-        }
+    public static String[] generateRound() {
+        var questionsAndAnswers = new String[2];
+        int numbersInRow = Utils.getRandomNumbers(MIN_SIZE, MAX_SIZE);
+        int missingNumberIndex = Utils.getRandomNumber(numbersInRow);
+        int increment = Utils.getRandomNumber(10);
+        int currentNum = Utils.getRandomNumber(101);
+        String[] progression = generateProgression(numbersInRow, currentNum, increment);
+        String missingNumber = progression[missingNumberIndex];
+        progression[missingNumberIndex] = " .. ";
+        questionsAndAnswers[Engine.ANSWER_NUMBER] = missingNumber;
+        questionsAndAnswers[Engine.QUESTION_NUMBER] = String.join(" ", progression);
         return questionsAndAnswers;
     }
-    private static String[] generateProgression(int numsInRow, int currentNum, int increment) {
-        String[] progression = new String[numsInRow];
-        for (int j = 0; j < numsInRow; j++) {
+
+    private static String[] generateProgression(int numbersInRow, int currentNum, int increment) {
+        String[] progression = new String[numbersInRow];
+        for (int j = 0; j < numbersInRow; j++) {
             progression[j] = String.valueOf(currentNum);
             currentNum += increment;
         }
         return progression;
     }
 }
+

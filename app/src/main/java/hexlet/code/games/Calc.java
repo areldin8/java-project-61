@@ -1,55 +1,54 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
+
 public class Calc {
     public static final String DESCRIPTION = "What is the result of the expression?";
-    public static final int ATTEMPT_COUNT = Engine.ATTEMPTS;
-    public static final int ACTION_NUM = 3;
-    private static final int QUESTION_NUMBER = 0;
-    private static final int ANSWER_NUMBER = 1;
-    private static final char[] MATH_SIGNS = {'+', '*', '-'};
-    private static String[][] questionsAndAnswers = new String[ATTEMPT_COUNT][2];
 
-    public static void gameCalc() {
-        questionsAndAnswers = generateQuestionsAndAnswers();
-        Engine.introGame(DESCRIPTION, questionsAndAnswers);
+    public static void startCalc() {
+        var questionsAndAnswers = new String[Engine.ROUNDS_COUNT][];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questionsAndAnswers[i] = generateRound();
+        }
+        Engine.run(DESCRIPTION, questionsAndAnswers);
     }
 
-    private static String[][] generateQuestionsAndAnswers() {
-        Random random = new Random();
-        for (int i = 0; i < ATTEMPT_COUNT; i++) {
-            int num1 = random.nextInt(100);
-            int num2 = random.nextInt(100);
-            char sign = calculator(i, num1, num2);
-            questionsAndAnswers[i][QUESTION_NUMBER] = num1 + " " + sign + " " + num2;
-        }
+    public static String[] generateRound() {
+        var questionsAndAnswers = new String[2];
+        int num1 = Utils.getRandomNumber(101);
+        int num2 = Utils.getRandomNumber(101);
+        char sign = getExpression();
+        questionsAndAnswers[Engine.QUESTION_NUMBER] = num1 + " " + sign + " " + num2;
+        int result = calculator(num1, num2, sign);
+        questionsAndAnswers[Engine.ANSWER_NUMBER] = String.valueOf(result);
         return questionsAndAnswers;
     }
 
-    private static char calculator(int i, int num1, int num2) {
-        char sign = getExpression();
+    private static int calculator(int num1, int num2, char sign) {
+        var result = 0;
         switch (sign) {
             case '+':
-                questionsAndAnswers[i][ANSWER_NUMBER] = String.valueOf(num1 + num2);
+                result = num1 + num2;
                 break;
             case '-':
-                questionsAndAnswers[i][ANSWER_NUMBER] = String.valueOf(num1 - num2);
+                result = num1 - num2;
                 break;
             case '*':
-                questionsAndAnswers[i][ANSWER_NUMBER] = String.valueOf(num1 * num2);
+                result = num1 * num2;
                 break;
             default:
                 System.out.println("Error.Unknown sign");
         }
-        return sign;
+        return result;
     }
+
     private static char getExpression() {
-        Random random = new Random();
-        int randomSign = random.nextInt(ACTION_NUM);
-        char sign = MATH_SIGNS[randomSign];
-        return sign;
+        char[] operators = {'+', '-', '*'};
+        int randomIndex = Utils.getRandomNumber(3);
+        return operators[randomIndex];
     }
 }
+
 
 
 

@@ -97,14 +97,6 @@
     <!-- </module> -->
 
     <module name="TreeWalker">
-        <module name="SuppressionCommentFilter"/>
-
-        <!--Enable usage SUPPRESS CHECKSTYLE comment-->
-        <module name="SuppressWithNearbyCommentFilter">
-            <property name="commentFormat" value="CHECKSTYLE IGNORE"/>
-            <property name="checkFormat" value=".*"/>
-            <property name="influenceFormat" value="0"/>
-        </module>
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See https://checkstyle.org/config_javadoc.html -->
@@ -209,5 +201,8 @@
             <property name="optional" value="true"/>
         </module>
 
+        <module name="SuppressionCommentFilter">
+            <property name="checkFormat" value="MethodLength"/>
+        </module>
     </module>
 </module>

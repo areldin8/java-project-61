@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
-    public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+    public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startPrime() {
         var questionsAndAnswers = new String[Engine.ROUNDS_COUNT][];

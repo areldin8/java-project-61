@@ -14,7 +14,7 @@ public class Engine {
 
         for (String[] questionsAndAnswer : questionsAndAnswers) {
             var correctAnswer = questionsAndAnswer[ANSWER_NUMBER];
-            System.out.println("Question " + questionsAndAnswer[QUESTION_NUMBER]);
+            System.out.println("Question: " + questionsAndAnswer[QUESTION_NUMBER]);
             System.out.println("Your answer: ");
             String answer = scanner.nextLine();
             var result = answer.equals(correctAnswer);
@@ -33,4 +33,5 @@ public class Engine {
         System.out.println("Congratulations, " + username + "!");
     }
 }
+
 

@@ -9,7 +9,6 @@ import static hexlet.code.games.Progression.startProgression;
 
 public class App {
     public static void main(String[] args) {
-        Cli.greeting();
         Scanner scanner = new Scanner(System.in);
         var game = 0;
         System.out.println(

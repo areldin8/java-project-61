@@ -23,7 +23,7 @@ public class Progression {
         int currentNum = Utils.getRandomNumber(101);
         String[] progression = generateProgression(numbersInRow, currentNum, increment);
         String missingNumber = progression[missingNumberIndex];
-        progression[missingNumberIndex] = " .. ";
+        progression[missingNumberIndex] = "..";
         questionsAndAnswers[Engine.ANSWER_NUMBER] = missingNumber;
         questionsAndAnswers[Engine.QUESTION_NUMBER] = String.join(" ", progression);
         return questionsAndAnswers;

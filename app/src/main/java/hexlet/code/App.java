@@ -8,6 +8,12 @@ import static hexlet.code.games.Prime.startPrime;
 import static hexlet.code.games.Progression.startProgression;
 
 public class App {
+    public static final int GREETING_CASE = 1;
+    public static final int EVEN_CASE = 2;
+    public static final int CALC_CASE = 3;
+    public static final int NODE_CASE = 4;
+    public static final int PROGRESSION_CASE = 5;
+    public static final int PRIME_CASE = 6;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         var game = 0;
@@ -26,22 +32,22 @@ public class App {
         switch (game) {
             case 0:
                 return;
-            case 1:
+            case GREETING_CASE:
                 greeting();
                 break;
-            case 2:
+            case EVEN_CASE:
                 startEven();
                 break;
-            case 3:
+            case CALC_CASE:
                 startCalc();
                 break;
-            case 4:
+            case NODE_CASE:
                 startNode();
                 break;
-            case 5:
+            case PROGRESSION_CASE:
                 startProgression();
                 break;
-            case 6:
+            case PRIME_CASE:
                 startPrime();
                 break;
             default:

@@ -19,8 +19,8 @@ public class Progression {
         var questionsAndAnswers = new String[2];
         int numbersInRow = Utils.getRandomNumbers(MIN_SIZE, MAX_SIZE);
         int missingNumberIndex = Utils.getRandomNumber(numbersInRow);
-        int increment = Utils.getRandomNumber(10);
-        int currentNum = Utils.getRandomNumber(101);
+        int increment = Utils.getRandomNumber(Engine.MIN_NUMBER);
+        int currentNum = Utils.getRandomNumber(Engine.MAX_NUMBER);
         String[] progression = generateProgression(numbersInRow, currentNum, increment);
         String missingNumber = progression[missingNumberIndex];
         progression[missingNumberIndex] = "..";

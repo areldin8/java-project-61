@@ -6,6 +6,9 @@ public class Engine {
     public static final int QUESTION_NUMBER = 0;
     public static final int ANSWER_NUMBER = 1;
     public static final int ROUNDS_COUNT = 3;
+    public static final int MAX_NUMBER = 100;
+    public static final int MIN_NUMBER = 10;
+    public static final int CALC_ACTION = 3;
 
     public static void run(String greeting, String[][] questionsAndAnswers) {
         var username = Cli.greeting();

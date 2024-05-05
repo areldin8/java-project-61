@@ -15,8 +15,8 @@ public class Calc {
 
     public static String[] generateRound() {
         var questionsAndAnswers = new String[2];
-        int num1 = Utils.getRandomNumber(101);
-        int num2 = Utils.getRandomNumber(101);
+        int num1 = Utils.getRandomNumber(Engine.MAX_NUMBER);
+        int num2 = Utils.getRandomNumber(Engine.MAX_NUMBER);
         char sign = getExpression();
         questionsAndAnswers[Engine.QUESTION_NUMBER] = num1 + " " + sign + " " + num2;
         int result = calculator(num1, num2, sign);
@@ -44,10 +44,11 @@ public class Calc {
 
     private static char getExpression() {
         char[] operators = {'+', '-', '*'};
-        int randomIndex = Utils.getRandomNumber(3);
+        int randomIndex = Utils.getRandomNumber(Engine.CALC_ACTION);
         return operators[randomIndex];
     }
 }
+
 
 
 

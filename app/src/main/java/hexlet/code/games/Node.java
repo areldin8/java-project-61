@@ -15,8 +15,8 @@ public class Node {
 
     public static String[] generateRound() {
         var questionsAndAnswers = new String[2];
-        int num1 = Utils.getRandomNumber(101);
-        int num2 = Utils.getRandomNumber(101);
+        int num1 = Utils.getRandomNumber(Engine.MAX_NUMBER);
+        int num2 = Utils.getRandomNumber(Engine.MAX_NUMBER);
         questionsAndAnswers[Engine.QUESTION_NUMBER] = num1 + " " + num2;
         questionsAndAnswers[Engine.ANSWER_NUMBER] = String.valueOf(isGCD(num1, num2));
         return questionsAndAnswers;
@@ -31,5 +31,6 @@ public class Node {
         return a;
     }
 }
+
 
 

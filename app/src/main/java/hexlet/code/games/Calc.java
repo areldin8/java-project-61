@@ -37,14 +37,14 @@ public class Calc {
                 result = num1 * num2;
                 break;
             default:
-                System.out.println("Error.Unknown sign");
+                throw new Error("Unknown: '${sign}'!");
         }
         return result;
     }
 
     private static char getExpression() {
         char[] operators = {'+', '-', '*'};
-        int randomIndex = Utils.getRandomNumber(Engine.CALC_ACTION);
+        int randomIndex = Utils.getRandomNumber(operators.length);
         return operators[randomIndex];
     }
 }

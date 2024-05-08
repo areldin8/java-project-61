@@ -2,7 +2,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public class Node {
+public class GCD {
     public static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void startNode() {
@@ -18,11 +18,11 @@ public class Node {
         int num1 = Utils.getRandomNumber(Engine.MAX_NUMBER);
         int num2 = Utils.getRandomNumber(Engine.MAX_NUMBER);
         questionsAndAnswers[Engine.QUESTION_NUMBER] = num1 + " " + num2;
-        questionsAndAnswers[Engine.ANSWER_NUMBER] = String.valueOf(isGCD(num1, num2));
+        questionsAndAnswers[Engine.ANSWER_NUMBER] = String.valueOf(calculateGCD(num1, num2));
         return questionsAndAnswers;
     }
 
-    private static int isGCD(int a, int b) {
+    private static int calculateGCD(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;

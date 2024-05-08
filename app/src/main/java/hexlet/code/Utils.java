@@ -1,8 +1,8 @@
 package hexlet.code;
 
 public class Utils {
-    public static int getRandomNumber(int value) {
-        return (int) Math.floor(Math.random() * value);
+    public static int getRandomNumber(int maxValue) {
+        return getRandomNumbers(maxValue, 0);
     }
 
     public static int getRandomNumbers(int maxValue, int minValue) {

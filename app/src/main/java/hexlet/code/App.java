@@ -3,7 +3,7 @@ import java.util.Scanner;
 import static hexlet.code.Cli.greeting;
 import static hexlet.code.games.Even.startEven;
 import static hexlet.code.games.Calc.startCalc;
-import static hexlet.code.games.Node.startNode;
+import static hexlet.code.games.GCD.startNode;
 import static hexlet.code.games.Prime.startPrime;
 import static hexlet.code.games.Progression.startProgression;
 
@@ -51,7 +51,7 @@ public class App {
                 startPrime();
                 break;
             default:
-                System.out.println("Undefined input. Please choose number from 0 to 6.");
+                throw new Error("Undefined input. Please choose number from 0 to 6.");
         }
         scanner.close();
     }

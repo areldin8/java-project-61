@@ -46,8 +46,8 @@ public class Calc {
     private static char getExpression() {
         char[] operators = {'+', '-', '*'};
         int randomIndex = Utils.getRandomNumber(ACTION_NUMBERS);
-        char operator = operators[randomIndex];
-        return operator;
+        return operators[randomIndex];
+
     }
 }
 

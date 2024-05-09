@@ -2,7 +2,7 @@ package hexlet.code;
 
 public class Utils {
     public static int getRandomNumber(int maxValue) {
-        return getRandomNumbers(maxValue, 0);
+        return (int) Math.floor(Math.random() * (maxValue));
     }
 
     public static int getRandomNumbers(int maxValue, int minValue) {

@@ -2,12 +2,13 @@ package hexlet.code;
 
 public class Utils {
     public static int getRandomExpression() {
-        return getRandomNumber(3, 1);
+        return getRandomNumber(2, 0);
     }
 
     public static int randomizer() {
         return getRandomNumber(100, 1);
     }
+
     public static int getRandomNumber(int maxValue) {
         return getRandomNumber(maxValue, 1);
     }

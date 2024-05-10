@@ -9,7 +9,6 @@ screenshots/
 .idea/
 build/
 /build/
-.github/
 #files
 *.cast
 *.iml

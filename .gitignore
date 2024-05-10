@@ -8,7 +8,6 @@ screenshots/
 /.idea/
 .idea/
 build/
-/build/
 #files
 *.cast
 *.iml

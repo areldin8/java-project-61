@@ -4,7 +4,7 @@
 #directories
 out/
 screenshots/
-.gradle/
+.gradle
 /.idea/
 .idea/
 build/

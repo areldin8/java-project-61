@@ -14,6 +14,7 @@ public class App {
     public static final int NODE_CASE = 4;
     public static final int PROGRESSION_CASE = 5;
     public static final int PRIME_CASE = 6;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         var game = 0;

@@ -15,7 +15,7 @@ public class Even {
 
     private static String[] generateRound() {
         var questionsAndAnswers = new String[2];
-        int questionNumber = Utils.getRandomNumber(Engine.MAX_NUMBER);
+        int questionNumber = Utils.randomizer();
         questionsAndAnswers[Engine.QUESTION_NUMBER] = String.valueOf(questionNumber);
         questionsAndAnswers[Engine.ANSWER_NUMBER] = (isEven(questionNumber)) ? "yes" : "no";
         return questionsAndAnswers;

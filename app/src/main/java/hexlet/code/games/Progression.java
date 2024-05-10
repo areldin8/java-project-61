@@ -17,10 +17,10 @@ public class Progression {
 
     public static String[] generateRound() {
         var questionsAndAnswers = new String[2];
-        int numbersInRow = Utils.getRandomNumbers(MIN_SIZE, MAX_SIZE);
+        int numbersInRow = Utils.getRandomNumber(MIN_SIZE, MAX_SIZE);
         int missingNumberIndex = Utils.getRandomNumber(numbersInRow);
-        int increment = Utils.getRandomNumber(Engine.MIN_NUMBER);
-        int currentNum = Utils.getRandomNumber(Engine.MAX_NUMBER);
+        int increment = Utils.randomizer();
+        int currentNum = Utils.randomizer();
         String[] progression = generateProgression(numbersInRow, currentNum, increment);
         String missingNumber = progression[missingNumberIndex];
         progression[missingNumberIndex] = "..";

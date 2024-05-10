@@ -2,14 +2,8 @@
 /shelf/
 /.idea/workspace.xml
 #directories
-out/
 screenshots/
-.gradle
-/.idea/
-.idea/
-build/
 #files
 *.cast
-*.iml
 
 

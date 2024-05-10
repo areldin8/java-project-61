@@ -4,7 +4,6 @@ import hexlet.code.Utils;
 
 public class Calc {
     public static final String DESCRIPTION = "What is the result of the expression?";
-    public static final int ACTION_NUMBERS = 3;
 
     public static void startCalc() {
         var questionsAndAnswers = new String[Engine.ROUNDS_COUNT][];
@@ -16,8 +15,8 @@ public class Calc {
 
     public static String[] generateRound() {
         var questionsAndAnswers = new String[2];
-        int num1 = Utils.getRandomNumber(Engine.MAX_NUMBER);
-        int num2 = Utils.getRandomNumber(Engine.MAX_NUMBER);
+        int num1 = Utils.randomizer();
+        int num2 = Utils.randomizer();
         char sign = getExpression();
         questionsAndAnswers[Engine.QUESTION_NUMBER] = num1 + " " + sign + " " + num2;
         int result = calculator(num1, num2, sign);
@@ -45,7 +44,7 @@ public class Calc {
 
     private static char getExpression() {
         char[] operators = {'+', '-', '*'};
-        int randomIndex = Utils.getRandomNumber(ACTION_NUMBERS);
+        int randomIndex = Utils.getRandomExpression();
         return operators[randomIndex];
 
     }

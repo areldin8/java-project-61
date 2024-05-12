@@ -1,10 +1,6 @@
 package hexlet.code;
 
 public class Utils {
-    public static int getRandomSizeProgression() {
-        return getRandomNumber(9, 4);
-    }
-
     public static int getRandomExpression() {
         return getRandomNumber(2, 0);
     }

@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 public class Progression {
     public static final String DESCRIPTION = "What number is missing in the progression?";
     public static final int MAX_SIZE = 10;
-    public static final int MIN_SIZE = 5;
+    public static final int MIN_SIZE = 3;
 
     public static void startProgression() {
         var questionsAndAnswers = new String[Engine.ROUNDS_COUNT][];

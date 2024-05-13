@@ -1,8 +1,11 @@
 package hexlet.code;
 
 public class Utils {
+    public static final int MAX_SIZE = 10;
+    public static final int MIN_SIZE = 5;
+    public static final int MAX_NUMBER = 100;
     public static int getRandomSize() {
-        return getRandomNumber(10, 5);
+        return getRandomNumber(MAX_SIZE, MIN_SIZE);
     }
 
     public static int getRandomExpression() {
@@ -10,7 +13,7 @@ public class Utils {
     }
 
     public static int randomizer() {
-        return getRandomNumber(100, 1);
+        return getRandomNumber(MAX_NUMBER, 1);
     }
 
     public static int getRandomNumber(int maxValue) {

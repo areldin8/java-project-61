@@ -1,11 +1,14 @@
 package hexlet.code;
+import java.util.Random;
 
 public class Utils {
     public static final int MAX_SIZE = 10;
     public static final int MIN_SIZE = 5;
     public static final int MAX_NUMBER = 100;
+
     public static int getRandomSize() {
-        return getRandomNumber(MAX_SIZE, MIN_SIZE);
+        Random random = new Random();
+        return random.nextInt((MAX_SIZE - MIN_SIZE) + 1) + MIN_SIZE;
     }
 
     public static int getRandomExpression() {

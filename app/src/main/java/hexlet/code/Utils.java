@@ -2,10 +2,7 @@ package hexlet.code;
 
 public class Utils {
     public static int getRandomSize() {
-        return getRandomSize(10, 5);
-    }
-    public static int getRandomSize(int maxValue, int minValue) {
-        return (int) Math.floor(Math.random() * 6) + 5;
+        return getRandomNumber(10, 5);
     }
 
     public static int getRandomExpression() {

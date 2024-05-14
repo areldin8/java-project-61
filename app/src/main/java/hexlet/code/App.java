@@ -3,7 +3,7 @@ import java.util.Scanner;
 import static hexlet.code.Cli.greeting;
 import static hexlet.code.games.Even.startEven;
 import static hexlet.code.games.Calc.startCalc;
-import static hexlet.code.games.GCD.startNode;
+import static hexlet.code.games.GCD.startGCD;
 import static hexlet.code.games.Prime.startPrime;
 import static hexlet.code.games.Progression.startProgression;
 
@@ -43,7 +43,7 @@ public class App {
                 startCalc();
                 break;
             case NODE_CASE:
-                startNode();
+                startGCD();
                 break;
             case PROGRESSION_CASE:
                 startProgression();

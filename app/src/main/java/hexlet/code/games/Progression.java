@@ -1,9 +1,12 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
+import java.util.Random;
 
 public class Progression {
     public static final String DESCRIPTION = "What number is missing in the progression?";
+    public static final int MAX_SIZE = 10;
+    public static final int MIN_SIZE = 5;
 
     public static void startProgression() {
         var questionsAndAnswers = new String[Engine.ROUNDS_COUNT][];
@@ -14,9 +17,10 @@ public class Progression {
     }
 
     public static String[] generateRound() {
+        Random random = new Random();
         var questionsAndAnswers = new String[2];
-        int numbersInRow = Utils.getRandomSize();
-        int missingNumberIndex = Utils.getRandomNumber(numbersInRow);
+        int numbersInRow = random.nextInt(MAX_SIZE - MIN_SIZE + 1) + MIN_SIZE;
+        int missingNumberIndex = random.nextInt(numbersInRow);
         int increment = Utils.randomizer();
         int currentNum = Utils.randomizer();
         String[] progression = generateProgression(numbersInRow, currentNum, increment);

@@ -3,6 +3,8 @@
 /.idea/workspace.xml
 #directories
 screenshots/
+/build/
+build/
 out/
 .idea/
 #files

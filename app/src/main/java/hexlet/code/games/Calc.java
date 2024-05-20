@@ -17,8 +17,8 @@ public class Calc {
 
     public static String[] generateRound() {
         var questionsAndAnswers = new String[2];
-        int num1 = Utils.randomizer();
-        int num2 = Utils.randomizer();
+        int num1 = Utils.getRandomNumber();
+        int num2 = Utils.getRandomNumber();
         char sign = getExpression();
         questionsAndAnswers[Engine.QUESTION_NUMBER] = num1 + " " + sign + " " + num2;
         int result = calculator(num1, num2, sign);
@@ -27,21 +27,16 @@ public class Calc {
     }
 
     private static int calculator(int num1, int num2, char sign) {
-        var result = 0;
         switch (sign) {
             case '+':
-                result = num1 + num2;
-                break;
+                return num1 + num2;
             case '-':
-                result = num1 - num2;
-                break;
+                return  num1 - num2;
             case '*':
-                result = num1 * num2;
-                break;
+                return num1 * num2;
             default:
                 throw new Error("Unknown: '${sign}'!");
         }
-        return result;
     }
 
     private static char getExpression() {

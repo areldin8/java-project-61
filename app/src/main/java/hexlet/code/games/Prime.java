@@ -14,7 +14,7 @@ public class Prime {
     }
 
     public static String[] generateRound() {
-        int questionNumber = Utils.randomizer();
+        int questionNumber = Utils.getRandomNumber();
         var questionsAndAnswers = new String[2];
         questionsAndAnswers[Engine.QUESTION_NUMBER] = String.valueOf(questionNumber);
         questionsAndAnswers[Engine.ANSWER_NUMBER] = (isPrime(questionNumber)) ? "yes" : "no";

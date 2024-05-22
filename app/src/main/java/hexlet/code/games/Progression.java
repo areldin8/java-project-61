@@ -18,7 +18,7 @@ public class Progression {
     public static String[] generateRound() {
         var questionsAndAnswers = new String[2];
         int numbersInRow = Utils.generateRandomNumber(MIN_SIZE, MAX_SIZE);
-        int missingNumberIndex = Utils.generateRandomNumber(0, numbersInRow);
+        int missingNumberIndex = Utils.generateRandomNumber(1, numbersInRow);
         int increment = Utils.getRandomNumber();
         int currentNum = Utils.getRandomNumber();
         String[] progression = generateProgression(numbersInRow, currentNum, increment);
